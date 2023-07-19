@@ -10,10 +10,9 @@ var characters = {
 
 // Write password to the #password input
 function writePassword() {
-  // var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
-  // inputs for password requirements
+  // user inputs for password requirements
   var inputs = {
     lengthmin: parseInt(prompt("Enter min amount of characters")),
     lengthmax: parseInt(prompt("Enter max amount of characters")),
@@ -28,7 +27,7 @@ function writePassword() {
   // create password random password length based on min & max inputs
   var length = Math.floor(Math.random() * (inputs.lengthmax - inputs.lengthmin + 1)) + inputs.lengthmin;
 
-  // include required characters based on confirm windows
+  // include required characters based on user inputs
   var slctdchar = [];
   if (inputs.lowcase) {
     slctdchar = slctdchar.concat(characters.letters);
@@ -46,7 +45,7 @@ function writePassword() {
     slctdchar = slctdchar.concat(characters.spcl);
   }
 
-  // create random array to select from character array
+  // create random number array to select characters from array
   const randomarray = Array(length)
      .fill()
      .map(() => Math.floor(slctdchar.length * Math.random())); // numbers from 0-amount of required characters
