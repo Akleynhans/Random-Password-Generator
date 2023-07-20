@@ -24,7 +24,7 @@ function writePassword() {
 
 
 
-  // create password random password length based on min & max inputs
+  // create random password length based on min & max inputs
   var length = Math.floor(Math.random() * (inputs.lengthmax - inputs.lengthmin + 1)) + inputs.lengthmin;
 
   // include required characters based on user inputs
