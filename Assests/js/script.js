@@ -10,7 +10,7 @@ var characters = {
 
 // Write password to the #password input
 function writePassword() {
-  var passwordText = document.querySelector("#password");
+  const passwordText = document.querySelector("#password");
 
   // user inputs for password requirements
   var inputs = {
@@ -46,7 +46,7 @@ function writePassword() {
       slctdchar = slctdchar.concat(characters.spcl);
     }
 
-    if (slctdchar.length === 0){
+    if (slctdchar.length === 0) {
       alert("INVALID INPUT: AT LEAST ONE SET OF CHARACTERS HAS TO BE SELECTED");
     }
 
@@ -59,10 +59,11 @@ function writePassword() {
     var password = randomarray.map(pickpassword)
     function pickpassword(num) {
       return slctdchar[num]
-      
-      // join array into a str and output
-      passwordText.value = password.join('');
     }
+    console.log(password);
+    // join array into a str and output
+    passwordText.value = password.join('');
+
   } else {
     alert("INVALID MAX-MIN CHARACTER INPUTS");
   }
